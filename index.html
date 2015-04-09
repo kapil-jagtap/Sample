@@ -1,8 +1,27 @@
 <html>
 <head>
 <title>Sample App</title>
+<script type="text/javascript">
+function showData()
+{
+	var uname = document.getElementById("user");	
+	var results = "";
+	
+	if(uname.value == "")
+	results = "Please enter your name";
+	else
+	results = "Your name is : <b>"+ uname.value + "</b>";
+	
+	document.getElementById('result').innerHTML= results;	
+}
+</script>
 </head>
 <body>
-<input type="button" name="click" value="Click Me" onClick="alert('Hello World')"/>
+<form name="form1">
+<label>Enter your name :</label>
+<input type="text" id="user" name="user" value="" maxlength="20"/>
+<input type="button" name="click" value="Click Me" onClick="showData();" />
+<label id="result"></label>
+</form>
 </body>
 </html>
